@@ -1,19 +1,9 @@
 from picamera2 import Picamera2
 from libcamera import controls
-
-
-picam2 = Picamera2()
-picam2.start(show_preview=True)
-picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
-picam2.capture_file("test6.jpg")
-picam2.stop_preview()
-picam2.stop()
-
-
 import os
 
 # folder path
-dir_path = r'/home/admin/cam/overaged'
+dir_path = r'/home/admin/cam/underaged'
 
 # list to store files
 res = []
@@ -24,3 +14,12 @@ for path in os.listdir(dir_path):
     if os.path.isfile(os.path.join(dir_path, path)):
         res.append(path)
 print(res)
+last = str(max(res)+1)
+print(last)
+
+picam2 = Picamera2()
+picam2.start(show_preview=True)
+picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
+picam2.capture_file(last +".jpg")
+picam2.stop_preview()
+picam2.stop()
