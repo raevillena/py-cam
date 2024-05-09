@@ -12,9 +12,11 @@ res = []
 for path in os.listdir(dir_path):
     # check if current path is a file
     if os.path.isfile(os.path.join(dir_path, path)):
-        res.append(path)
+        buff = os.path.splitext(path)[0]
+        res.append(buff)
 print(res)
-last = str(max(res)+1)
+
+last = str(int(max(res))+1)
 print(last)
 
 picam2 = Picamera2()
