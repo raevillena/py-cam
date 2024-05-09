@@ -23,6 +23,7 @@ last = str(int(max(res))+1)
 print(last)
 
 picam2 = Picamera2()
+picam2.options["quality"] = 95
 picam2.start(show_preview=True)
 picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
 time.sleep(2)
