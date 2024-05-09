@@ -2,10 +2,10 @@ from picamera2 import Picamera2
 from libcamera import controls
 import os
 
-mode = "/underaged/"
+mode = "underaged"
 
 # folder path
-dir_path = r'/home/admin/cam/underaged'
+dir_path = r'/home/admin/cam/underaged/'
 
 # list to store files
 res = []
@@ -24,6 +24,6 @@ print(last)
 picam2 = Picamera2()
 picam2.start(show_preview=True)
 picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
-picam2.capture_file(mode + last +".jpg")
+picam2.capture_file(dir_path + last +".jpg")
 picam2.stop_preview()
 picam2.stop()
