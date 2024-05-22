@@ -18,8 +18,11 @@ for path in os.listdir(dir_path):
         buff = os.path.splitext(path)[0]
         res.append(buff)
 print(res)
-
-last = str(int(max(res))+1)
+maxnum=max(res)
+print(maxnum)
+plusone=int(maxnum)+1
+print(plusone)
+last = str(plusone)
 print(last)
 
 picam2 = Picamera2()
