@@ -35,7 +35,7 @@ config = picam2.create_still_configuration(main={'size': (4608, 2592) },
 picam2.configure(config)
 picam2.start(show_preview=True)
 picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous,
-                     "AeFlickerMode":controls.AeFlickerModeEnum.FlickerManual,
+                     "AeFlickerMode":controls.AeFlickerModeEnum.Manual,
                      "AeFlickerPeriod":10000})
 time.sleep(2)
 picam2.capture_file(dir_path + last +".jpg")
