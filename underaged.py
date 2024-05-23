@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from picamera2 import Picamera2
 from libcamera import controls
 import os
