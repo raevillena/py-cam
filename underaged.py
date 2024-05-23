@@ -31,14 +31,12 @@ picam2 = Picamera2()
 picam2.options["quality"] = 95
 config = picam2.create_still_configuration(main={'size': (4608, 2592) },
                                            lores={'size': (640, 480) },
-                                           display='lores', buffer_count=3, queue=False,
-                                           controls={
-                                               'AeFlickerMode':controls.AeFlickerModeEnum.Manual,
-                                               'AeFlickerPeriod':8333
-                                           })
+                                           display='lores', buffer_count=3, queue=False)
 picam2.configure(config)
 picam2.start(show_preview=True)
-picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
+picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous,
+                     "AeFlickerMode":controls.AeFlickerModeEnum.FlickerManual,
+                     "AeFlickerPeriod":10000})
 time.sleep(2)
 picam2.capture_file(dir_path + last +".jpg")
 picam2.stop_preview()
