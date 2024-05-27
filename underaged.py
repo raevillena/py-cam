@@ -25,8 +25,7 @@ res=list(map(int, res))
 if res:
     maxnum=max(res)
 else:
-    maxnum=1
-
+    maxnum=0
 
 plusone=int(maxnum)+1
 #convert to string for concatenation
