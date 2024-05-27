@@ -22,8 +22,12 @@ for path in os.listdir(dir_path):
 #create a list of file names
 res=list(map(int, res))
 #determine the maximum
-maxnum=max(res)
-#+1 for the next file name to use
+if res:
+    maxnum=max(res)
+else:
+    maxnum=1
+
+
 plusone=int(maxnum)+1
 #convert to string for concatenation
 last = str(plusone)
