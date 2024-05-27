@@ -69,6 +69,6 @@ maxnum=max(res)
 #+1 for the next file name to use
 last2 = str(maxnum)
 if last==last2:
-    print("Successfully saved " + last+ ".jpg")
+    print("Successfully saved " + last+ ".jpg in underaged folder!")
 else:
     print("ERROR Please try again!")
